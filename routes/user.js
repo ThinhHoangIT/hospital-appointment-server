@@ -10,6 +10,10 @@ router.put('/:id', userController.updateUser);
 router.delete('/:id', userController.deleteUser);
 // change password
 router.patch('/change-password', userController.changePassword);
+// forgot password
+router.post('/forgot-password', userController.forgetPassword);
+// confirm forgot password
+router.post('/confirm-forgot-password', userController.confirmForgetPassword);
 router.put('/update-status/:id', userController.updateUserStatus);
 
 // auth

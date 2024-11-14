@@ -18,9 +18,6 @@ const EmployeeSchema = new Schema(
       type: String,
       required: true,
     },
-    avatar: {
-      type: String,
-    },
     department: {
       type: String,
       ref: 'Department',

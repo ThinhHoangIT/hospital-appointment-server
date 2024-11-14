@@ -1,22 +1,21 @@
 const mongoose = require('mongoose');
-const { ObjectId } = mongoose.Schema.Types;
 
 const Schema = mongoose.Schema;
 
-const InvoiceSchema = new Schema({
-  userId: { type: ObjectId, required: true, ref: 'User' },
-  appointmentId: {
-    type: ObjectId,
-    required: true,
-    ref: 'Appointment',
+const InvoiceSchema = new Schema(
+  {
+    user: { type: String, required: true, ref: 'User' },
+    appointment: {
+      type: String,
+      required: true,
+      ref: 'Appointment',
+    },
+    medication: [{ type: String, required: true, ref: 'Medication' }],
+    amount: { type: Number, required: true },
+    desc: { type: String, required: true },
   },
-  prescriptionId: {
-    type: ObjectId,
-    required: true,
-    ref: 'Prescription',
-  },
-  amount: { type: Number, required: true },
-});
+  { timestamps: true },
+);
 
 const Invoice = mongoose.model('Invoice', InvoiceSchema);
 module.exports = Invoice;

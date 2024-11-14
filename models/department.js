@@ -21,6 +21,10 @@ const DepartmentSchema = new Schema(
     description: {
       type: String,
     },
+    type: {
+      type: String,
+      enum: ['technique', 'hospital'],
+    },
     searchIndex: {
       type: String,
     },

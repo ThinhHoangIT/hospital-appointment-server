@@ -16,6 +16,9 @@ const employeeRoutes = require('./routes/employee');
 const roleRoutes = require('./routes/role');
 const departmentRoutes = require('./routes/department');
 const workScheduleRoutes = require('./routes/workSchedule');
+const appointmentRoutes = require('./routes/appointment');
+const medicationRoutes = require('./routes/medication');
+const invoiceRoutes = require('./routes/invoice');
 
 // Load environment variables
 dotenv.config();
@@ -46,7 +49,7 @@ app.use(
     secret: process.env.JWT_SECRET_KEY,
     algorithm: 'RS256',
   }).unless({
-    path: [/auth/, /reviews/],
+    path: [/auth/, /users/],
   }),
 );
 // Routes middleware
@@ -56,6 +59,9 @@ router.use('/api/roles', roleRoutes.routes());
 router.use('/api/logs', logRoutes.routes());
 router.use('/api/departments', departmentRoutes.routes());
 router.use('/api/schedules', workScheduleRoutes.routes());
+router.use('/api/appointments', appointmentRoutes.routes());
+router.use('/api/medications', medicationRoutes.routes());
+router.use('/api/invoices', invoiceRoutes.routes());
 
 app.use(router.routes());
 app.use(router.allowedMethods({ throw: true }));

@@ -22,7 +22,7 @@ const MedicationSchema = new Schema(
       type: String,
     },
     price: {
-      type: String,
+      type: Number,
       required: true,
     },
     searchIndex: {

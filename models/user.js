@@ -41,7 +41,12 @@ const userSchema = mongoose.Schema(
       default: USER_STATUSES.ACTIVE,
       enum: Object.values(USER_STATUSES),
     },
-    reviews: [{ type: String, ref: 'Review' }],
+    confirmationToken: String,
+    confirmationTokenExpires: Date,
+
+    passwordChangedAt: Date,
+    passwordResetToken: String,
+    passwordResetExpires: Date,
     searchIndex: {
       type: String,
     },

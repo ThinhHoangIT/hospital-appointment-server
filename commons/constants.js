@@ -1,9 +1,13 @@
 const FEATURES = {
   ADMIN: 'admin',
+
+  // MANAGE
   MANAGE_PATIENT: 'manage_patient',
   MANAGE_SCHEDULE: 'manage_schedule',
   MANAGE_MEDICINE: 'manage_medicine',
   MANAGE_DOCTOR: 'manage_doctor',
+  MANAGE_APPOINTMENT: 'manage_appointment',
+  MANAGE_INVOICE: 'manage_invoice',
 };
 
 const USER_STATUSES = {

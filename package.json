@@ -27,6 +27,7 @@
     "koa-jwt": "^4.0.1",
     "koa-router": "^10.0.0",
     "mongoose": "^5.12.3",
+    "nodemailer": "^6.9.16",
     "path": "^0.12.7",
     "prettier": "^2.3.0",
     "stripe": "^16.12.0",

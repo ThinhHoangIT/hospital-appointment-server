@@ -1,38 +1,24 @@
 const mongoose = require('mongoose');
-const { ObjectId } = mongoose.Schema.Types;
 
 const Schema = mongoose.Schema;
 
 const AppointmentSchema = new Schema(
   {
-    userId: { type: ObjectId, required: true, ref: 'User' },
-    employeeId: {
-      type: String,
-      required: true,
-      ref: 'Employee',
-    },
+    userId: { type: String, required: true, ref: 'User' },
     departmentId: {
       type: String,
       required: true,
       ref: 'Department',
     },
-    date: { type: String, required: true },
-    shift: { type: String, required: true, enum: ['morning', 'afternoon'] },
+    date: { type: Number, required: true },
     status: {
       type: String,
-      required: true,
-      enum: ['scheduled', 'completed', 'canceled'],
+      default: 'pending',
+      enum: ['pending', 'approved', 'rejected'],
     },
   },
   { timestamps: true },
 );
-
-AppointmentSchema.virtual('employeeData', {
-  ref: 'Employee',
-  localField: 'employeeId',
-  foreignField: 'id',
-  justOne: true,
-});
 
 AppointmentSchema.virtual('departmentData', {
   ref: 'Department',
