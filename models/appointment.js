@@ -11,6 +11,7 @@ const AppointmentSchema = new Schema(
       ref: 'Department',
     },
     date: { type: Number, required: true },
+    shift: { type: String, required: true, enum: ['morning', 'afternoon'] },
     status: {
       type: String,
       default: 'pending',

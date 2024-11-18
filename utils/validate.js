@@ -28,6 +28,7 @@ const validateEmployee = (data, isAllOptional) => {
     id: Joi.string().required(),
     name: Joi.string().required(),
     department: Joi.string().allow(''),
+    desc: Joi.string().allow(''),
     role: Joi.string().allow(''),
     phone: Joi.string().min(10).max(15).regex(PHONE_REGEX).allow(''),
     password: Joi.string().min(6).allow(''),

@@ -22,6 +22,9 @@ const EmployeeSchema = new Schema(
       type: String,
       ref: 'Department',
     },
+    desc: {
+      type: String,
+    },
     role: {
       type: String,
     },
